@@ -1,0 +1,98 @@
+﻿@model MVCRAST.Models.Systems
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Systems</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.POAM.AuthorizationStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POAM.AuthorizationStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAP.SAPID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAP.SAPID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SystemName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystemName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Confidentiality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Confidentiality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Integrity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Integrity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Availability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Availability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssessmentStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssessmentStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssessmentEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssessmentEndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssessmentPriority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssessmentPriority)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SystemsID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

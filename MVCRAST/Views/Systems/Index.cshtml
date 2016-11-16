@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MVCRAST.Models.Systems>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.POAM.AuthorizationStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAP.SAPID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SystemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Confidentiality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Integrity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Availability)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentPriority)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.POAM.AuthorizationStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAP.SAPID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SystemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Confidentiality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Integrity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Availability)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssessmentStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssessmentEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssessmentPriority)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SystemsID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SystemsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SystemsID })
+        </td>
+    </tr>
+}
+
+</table>
