@@ -64,6 +64,9 @@ namespace MVCRAST.Models
 
     public class RegisterViewModel
     {
+        //this will be used for managing roles
+        public string Name { get; set;}
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

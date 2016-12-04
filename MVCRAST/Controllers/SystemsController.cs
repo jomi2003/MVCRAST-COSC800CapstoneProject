@@ -12,13 +12,35 @@ namespace MVCRAST.Controllers
 {
     public class SystemsController : Controller
     {
+       /*MRE*/private ApplicationDbContext context;
         private RASTDBContext db = new RASTDBContext();
+
+        public SystemsController()
+        {
+            context = new ApplicationDbContext();
+        }
 
         // GET: Systems
         public ActionResult Index()
         {
             var systems = db.Systems.Include(s => s.POAM).Include(s => s.SAP).Include(s => s.User);
             return View(systems.ToList());
+        }
+
+        [Authorize(Roles = "Assessor")]
+        public ActionResult SystemsList()
+        {
+            ViewBag.Message = "Your Systems List page.";
+
+            return View();
+        }
+
+
+        public ActionResult ScheduleAssessment()
+        {
+            ViewBag.Message = "Your Schedule Assessment for Systems page.";
+
+            return View();
         }
 
         // GET: Systems/Details/5
@@ -42,6 +64,11 @@ namespace MVCRAST.Controllers
             ViewBag.POAMID = new SelectList(db.POAMs, "POAMID", "AuthorizationStatus");
             ViewBag.SAPID = new SelectList(db.SAPs, "SAPID", "SAPID");
             ViewBag.UserID = new SelectList(db.Users, "UserID", "FirstName");
+
+            /**/
+               ViewBag.UserName = new SelectList(context.Users.ToList(), "UserName", "UserName");
+
+
             return View();
         }
 
@@ -62,6 +89,7 @@ namespace MVCRAST.Controllers
             ViewBag.POAMID = new SelectList(db.POAMs, "POAMID", "AuthorizationStatus", systems.POAMID);
             ViewBag.SAPID = new SelectList(db.SAPs, "SAPID", "SAPID", systems.SAPID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "FirstName", systems.UserID);
+
             return View(systems);
         }
 

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Systems List";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Schedule Assessment/Security Assessment Plan", "ScheduleAssessment", "Systems")</li>
+        <li>@Html.ActionLink("Conduct Assessment", "Index", "Systems")</li>
+        <li>@Html.ActionLink("Upload Security Assessment Report(SAR)", "SystemsList", "Systems")</li>
+        <li>@Html.ActionLink("Security Authorization Package", "About", "Home")</li>
+      
+    </ul>
+   
+</div>
+<p>Use this area to provide additional information for Systems List.</p>
+
